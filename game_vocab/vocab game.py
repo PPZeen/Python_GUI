@@ -45,12 +45,16 @@ N.set(0)
 
 def readVocab():
     results = {}
-    f = open("Oxford_3000.txt", "r")
-    
-    for line in f:
-        key, value = line.strip().split(" = ")
-        value = [v.strip() for v in value.split(",")]
-        results[key] = value
+    fileLocation = r"C:\Users\ASUS\Desktop\Prite\Coding\For_python\GUI\game_vocab\Oxford_3000.txt"
+    try :
+        f = open(fileLocation, "r")
+        for line in f:
+            key, value = line.strip().split(" = ")
+            value = [v.strip() for v in value.split(",")]
+            results[key] = value
+        f.close()
+    except:
+        print("Error ro read file.")
         
     return results
 
